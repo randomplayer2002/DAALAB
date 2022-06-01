@@ -8,35 +8,33 @@ static int[] a = new int[MAX];
 public static void main(String[] args)
 {
 Scanner input = new Scanner(System.in);
-System.out.print(&quot;Enter Max array size: &quot;);
+System.out.print("Enter Max array size: ");
 int n = input.nextInt();
 Random random = new Random();
-System.out.println(&quot;Enter the array elements: &quot;);
-for (int i = 0; i &lt; n; i++)
+System.out.println("Enter the array elements: ");
+for (int i = 0; i < n; i++)
 a[i] = random.nextInt(1000); // generate random numbers – uniform
 
 // distribution
 
-System.out.println(&quot;Input Array:&quot;);
-for (int i = 0; i &lt; n; i++)
-System.out.print(a[i] + &quot; &quot;);
+System.out.println("Input Array: ");
+for (int i = 0; i < n; i++)
+System.out.print(a[i] + " ");
 // set start time
 long startTime = System.nanoTime();
 QuickSortAlgorithm(0, n - 1);
 long stopTime = System.nanoTime();
 long elapsedTime = stopTime - startTime;
-System.out.println(&quot;\nSorted Array:&quot;);
-for (int i = 0; i &lt; n; i++)
-System.out.print(a[i] + &quot; &quot;);
+System.out.println("\nSorted Array: ");
+for (int i = 0; i <; n; i++)
+System.out.print(a[i] + " ");
 System.out.println();
-System.out.println(&quot;Time Complexity in ms for n=&quot; + n + &quot; is: &quot; + (double)
-
-elapsedTime / 1000000);
+System.out.println("Time Complexity in ms for n=" + n + " is: " + (double)elapsedTime / 1000000);
 }
 public static void QuickSortAlgorithm(int p, int r)
 {
 int i, j, temp, pivot;
-if (p &lt; r)
+if (p < r)
 {
 i = p;
 
@@ -45,12 +43,12 @@ pivot = a[p]; // mark first element as pivot
 while (true)
 {
 i++;
-while (a[i] &lt; pivot &amp;&amp; i &lt; r)
+while (a[i] < pivot && i < r)
 i++;
 j--;
-while (a[j] &gt; pivot)
+while (a[j] > pivot)
 j--;
-if (i &lt; j)
+if (i < j)
 {
 temp = a[i];
 a[i] = a[j];
