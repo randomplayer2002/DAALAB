@@ -26,7 +26,7 @@ QuickSortAlgorithm(0, n - 1);
 long stopTime = System.nanoTime();
 long elapsedTime = stopTime - startTime;
 System.out.println("\nSorted Array: ");
-for (int i = 0; i <; n; i++)
+for (int i = 0; i < n; i++)
 System.out.print(a[i] + " ");
 System.out.println();
 System.out.println("Time Complexity in ms for n=" + n + " is: " + (double)elapsedTime / 1000000);
