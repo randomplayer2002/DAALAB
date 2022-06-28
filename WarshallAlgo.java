@@ -28,8 +28,8 @@ if (tc[j][i])
 for (int k = 0; k < V;k++)
 if (tc[j][i] && tc[i][k])
 tc[j][k] = true;
-}
-}
+    }
+  }
 
 }
 /** Funtion to display the trasitiveclosure **/
@@ -41,24 +41,24 @@ System.out.println("\nTransitive closure :\n");
 //for (int v = 0; v &lt; V; v++)
 //System.out.print(&quot; &quot; + v );
 System.out.println();
+  
 for (int v = 0; v < V; v++)
 {
 //System.out.print(v +" ");
 for (int w = 0; w < V; w++)
 {
-if (tc[v][w])
-System.out.print(" 1 ");
-else
-System.out.print(" 0 ");
+  if (tc[v][w])
+    System.out.print(" 1 ");
+  else
+    System.out.print(" 0 ");
 }
-System.out.println();
-}
+  System.out.println();
+  }
 }
 /** Main function **/
 public static void main (String[] args)
 {
-Scanner scan = new
-Scanner(System.in);
+Scanner scan = new Scanner(System.in);
 System.out.println("WarshallAlgorithm Test\n");
 
 /** Make an object of Warshall class**/
@@ -70,11 +70,12 @@ int V = scan.nextInt();
   
 /** get graph **/
 System.out.println("\nEntermatrix\n");
+  
 int[][] graph = new int[V][V];
 for (int i = 0; i < V; i++)
 for (int j = 0; j < V; j++)
 graph[i][j] = scan.nextInt();
 w.getTC(graph);
 w.displayTC();
-}
+  }
 }
