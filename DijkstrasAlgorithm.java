@@ -9,7 +9,7 @@ public class DijkstrasClass {
 static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) 
-{
+	{
 		ReadMatrix();
 		int s = 0; 			// starting vertex
 		System.out.println("Enter starting vertex: ");
@@ -18,7 +18,7 @@ static Scanner scan = new Scanner(System.in);
 	}
 
 	static void ReadMatrix() 
-{
+	{
 		a = new int[MAX][MAX];
 		System.out.println("Enter the number of vertices:");
 		n = scan.nextInt();
@@ -29,13 +29,13 @@ static Scanner scan = new Scanner(System.in);
 	}
 
 	static void Dijkstras(int s) 
-{
+	{
 		int S[] = new int[MAX];
 		int d[] = new int[MAX];
 		int u, v;
 		int i;
 		for (i = 1; i <= n; i++) 
-{
+		{
 			S[i] = 0;
 			d[i] = a[s][i];
 		}
@@ -43,13 +43,13 @@ static Scanner scan = new Scanner(System.in);
 		d[s] = 1;
 		i = 2;
 		
-while (i <= n) 
-{
+		while (i <= n) 
+		{
 			u = Extract_Min(S, d);
 			S[u] = 1;
 			i++;
 			for (v = 1; v <= n; v++) 
-{
+			{
 				if (((d[u] + a[u][v] < d[v]) && (S[v] == 0)))
 					d[v] = d[u] + a[u][v];
 			}
@@ -60,13 +60,13 @@ while (i <= n)
 	}
 
 	static int Extract_Min(int S[], int d[]) 
-{
+	{
 		int i, j = 1, min;
 		min = infinity;
 		for (i = 1; i <= n; i++) 
-{
+		{
 			if ((d[i] < min) && (S[i] == 0)) 
-{
+			{
 				min = d[i];
 				j = i;
 			}
