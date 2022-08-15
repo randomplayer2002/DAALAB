@@ -61,9 +61,9 @@ public static void main(String[] args)
 		int cost[][]=new int[10][10];
 		int tree[][]=new int[10][10];
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the no of nodes\n");
+		System.out.println("Enter the no of nodes:\n");
 		int n=sc.nextInt();
-		System.out.println("Enter the cost adjacency matrix\n");
+		System.out.println("Enter the cost adjacency matrix:\n");
 		for(int i=0;i<n;i++)
 		{
 			for(int j=0;j<n;j++)
@@ -88,15 +88,15 @@ for(int i=0; i<n; i++)
 		int sum=p.prim(n,cost,source,tree);
 		if(sum>=999)
 		{
-			System.out.println("Spanning tree does not exist\n");
+			System.out.println("Spanning tree does not exist:\n");
 			System.exit(0);
 		}
-		System.out.println("The spanning tree is shown below\n");
+		System.out.println("The spanning tree is shown below:\n");
 		for(int i=0;i<n-1;i++)
 		{
 			System.out.println(tree[i][0]+","+tree[i][1]);
 		}
-		System.out.println("The sum of minimum spanning tree is"+sum);
+		System.out.println("The sum of minimum spanning tree is: "+sum);
 
     	}    
 }
