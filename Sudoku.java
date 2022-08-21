@@ -2,36 +2,17 @@ public class Sudoku {
  
     // N is the size of the 2D matrix   N*N
     static int N = 9;
- 
-    /* Takes a partially filled-in grid and attempts
-    to assign values to all unassigned locations in
-    such a way to meet the requirements for
-    Sudoku solution (non-duplication across rows,
-    columns, and boxes) */
     static boolean solveSudoku(int grid[][], int row,
                                int col)
     {
  
-        /*if we have reached the 8th
-           row and 9th column (0
-           indexed matrix) ,
-           we are returning true to avoid further
-           backtracking       */
         if (row == N - 1 && col == N)
             return true;
- 
-        // Check if column value  becomes 9 ,
-        // we move to next row
-        // and column start from 0
         if (col == N) {
             row++;
             col = 0;
         }
- 
-        // Check if the current position
-        // of the grid already
-        // contains value >0, we iterate
-        // for next column
+     
         if (grid[row][col] != 0)
             return solveSudoku(grid, row, col + 1);
  
@@ -71,30 +52,20 @@ public class Sudoku {
         }
     }
  
-    // Check whether it will be legal
-    // to assign num to the
-    // given row, col
+   
     static boolean isSafe(int[][] grid, int row, int col,
                           int num)
     {
- 
-        // Check if we find the same num
-        // in the similar row , we
-        // return false
         for (int x = 0; x <= 8; x++)
             if (grid[row][x] == num)
                 return false;
  
-        // Check if we find the same num
-        // in the similar column ,
-        // we return false
+       
         for (int x = 0; x <= 8; x++)
             if (grid[x][col] == num)
                 return false;
  
-        // Check if we find the same num
-        // in the particular 3*3
-        // matrix, we return false
+       
         int startRow = row - row % 3, startCol
                                       = col - col % 3;
         for (int i = 0; i < 3; i++)
@@ -123,5 +94,4 @@ public class Sudoku {
         else
             System.out.println("No Solution exists");
     }
-    // This is code is contributed by Pradeep Mondal P
 }
