@@ -18,25 +18,17 @@ public class Sudoku {
  
         for (int num = 1; num < 10; num++) {
  
-            // Check if it is safe to place
-            // the num (1-9)  in the
-            // given row ,col ->we move to next column
+           
             if (isSafe(grid, row, col, num)) {
  
-                /*  assigning the num in the current
-                (row,col)  position of the grid and
-                assuming our assigned num in the position
-                is correct */
+              
                 grid[row][col] = num;
  
-                // Checking for next
-                // possibility with next column
+                
                 if (solveSudoku(grid, row, col + 1))
                     return true;
             }
-            /* removing the assigned num , since our
-               assumption was wrong , and we go for next
-               assumption with diff num value   */
+            
             grid[row][col] = 0;
         }
         return false;
@@ -76,7 +68,6 @@ public class Sudoku {
         return true;
     }
   
-    // Driver Code
     public static void main(String[] args)
     {
         int grid[][] = { { 3, 0, 6, 5, 0, 8, 4, 0, 0 },
